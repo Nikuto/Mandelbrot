@@ -24,8 +24,8 @@ public class Window extends JFrame {
 		 */
 
 		// Size of the window in pixels
-		int x_definition = 1500;
-		int y_definition = 1000;
+		int x_definition = 500;
+		int y_definition = 500;
 		// Side of one square block, in pixels
 		int block_size = 50;
 

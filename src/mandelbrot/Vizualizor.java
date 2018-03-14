@@ -17,6 +17,7 @@ public class Vizualizor extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 1L;
 
 	private Timer timer;
+	long tempsinit=0,tempsfin=0;
 
 	private Future<Block> blocks[][];
 
@@ -44,10 +45,11 @@ public class Vizualizor extends JPanel implements ActionListener {
 	@SuppressWarnings("unchecked")
 	public Vizualizor(Server server, double x_min, double y_min, double x_max, double y_max, int x_def, int y_def, int block_size, int threshold){
 		super();
-
+		
 		timer=new Timer(100, this);
 		timer.start();
-
+		
+		tempsinit = System.currentTimeMillis();
 		this.x_def = x_def;
 		this.y_def = y_def;
 		this.block_size = block_size;
@@ -66,6 +68,8 @@ public class Vizualizor extends JPanel implements ActionListener {
 			}
 		}
 		Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
+		
+		
 	}
 
 	/**
@@ -97,8 +101,15 @@ public class Vizualizor extends JPanel implements ActionListener {
 						e.printStackTrace();
 					}
 				}
+				
 			}
 		}
+		//TODO : Faire marcher le timer :'(
+//		if(blocks[x_block_nbr-1][y_block_nbr-1].isDone()){
+//			tempsfin = System.currentTimeMillis();
+//			System.out.println(tempsfin - tempsinit);
+//		}
+
 
 	}
 }
